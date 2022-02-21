@@ -90,7 +90,7 @@ process.FEVTDEBUGHLToutput = cms.OutputModule("PoolOutputModule",
     ),
     fileName = cms.untracked.string('file:/eos/user/z/zhenggan/JetTaggingwithHGCal/test/0001.root'),
     
-    outputCommands = customized_event_content.outputCommands,
+    outputCommands = process.FEVTDEBUGEventContent.outputCommands,
     splitLevel = cms.untracked.int32(0)
 )
 
@@ -112,7 +112,7 @@ process.generator = cms.EDFilter("Pythia8ConcurrentGeneratorFilter",
         processParameters = cms.vstring(
             'HardQCD:all = on',
             'PhaseSpace:pTHatMin = 50.',
-            'PhaseSpace:pTHatMax = 800.'
+            'PhaseSpace:pTHatMax = 200.'
         ),
         pythia8CUEP8M1Settings = cms.vstring(
             'Tune:pp 14',
