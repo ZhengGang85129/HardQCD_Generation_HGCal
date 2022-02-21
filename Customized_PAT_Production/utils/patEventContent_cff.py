@@ -1,7 +1,9 @@
 
 customized_EventContent=[
-        'keep *_genParticles_*_*',
-        'keep *_selectedPat*_*_*',
-        'drop patJets_selectedPatJets*_*_*',
-        'keep *_hgcalLayerClusters*_*_*',
+        'keep reco*GenParticle*_genParticles__*',
+        'keep *_selectedPat*_genJets_*',
+        'keep *_selectedPat*__*',
+        'keep *_selectedPat*_pfCandidates_*',
+        'keep *_hgcalLayerClusters*__*',
+        'keep *_pfTICL*_*_*'
         ]
