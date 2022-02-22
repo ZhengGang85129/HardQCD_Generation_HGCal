@@ -1,0 +1,40 @@
+****WARNING: Multiple products with same name testZToMuMu_ntuplizerpatZtoMuMuTP
+             Previous defination: self/src/DYtoMuMu/patZtoMuMu/test
+             Current  defination: src/DYtoMuMu/mytuple/test
+****WARNING: Multiple products with same name testZToMuMu_ntuplizerZToMuMu_ntuplizerTP
+             Previous defination: self/src/DYtoMuMu/ZToMuMu_ntuplizer/test
+             Current  defination: src/ZToMuMu_ntuplizer/ZToMuMu_ntuplizer/test
+****WARNING: Multiple products with same name testclue_performanceclue_performanceTP
+             Previous defination: self/src/HGCal_DPG/clue_performance/test
+             Current  defination: src/clue_performance/clue_performance/test
+>> Local Products Rules ..... started
+gmake: *** [src/Fireworks/Geometry/plugins contains only BuildFile.xml without any sources. Better to remove BuildFile.xml too or do not tag this directory] Error 1
+gmake: *** [src/Fireworks/Geometry/plugins contains only BuildFile.xml without any sources. Better to remove BuildFile.xml too or do not tag this directory] Error 1
+gmake: *** [src/Fireworks/Geometry/plugins contains only BuildFile.xml without any sources. Better to remove BuildFile.xml too or do not tag this directory] Error 1
+gmake: *** [src/Fireworks/Geometry/plugins contains only BuildFile.xml without any sources. Better to remove BuildFile.xml too or do not tag this directory] Error 1
+gmake: *** [src/Fireworks/Geometry/plugins contains only BuildFile.xml without any sources. Better to remove BuildFile.xml too or do not tag this directory] Error 1
+gmake: *** [src/Fireworks/Geometry/plugins contains only BuildFile.xml without any sources. Better to remove BuildFile.xml too or do not tag this directory] Error 1
+gmake: *** [src/Fireworks/Geometry/plugins contains only BuildFile.xml without any sources. Better to remove BuildFile.xml too or do not tag this directory] Error 1
+gmake: *** [src/Fireworks/Geometry/plugins contains only BuildFile.xml without any sources. Better to remove BuildFile.xml too or do not tag this directory] Error 1
+gmake: *** [src/Fireworks/Geometry/plugins contains only BuildFile.xml without any sources. Better to remove BuildFile.xml too or do not tag this directory] Error 1
+gmake: *** [src/Fireworks/Geometry/plugins contains only BuildFile.xml without any sources. Better to remove BuildFile.xml too or do not tag this directory] Error 1
+>> Local Products Rules ..... done
+****WARNING: Invalid tool FWCore/Framework. Please fix src/Fireworks/Geometry/BuildFile file.
+****WARNING: Invalid tool FWCore/Framework. Please fix src/Fireworks/Geometry/plugins/BuildFile file.
+****WARNING: Invalid tool FWCore/Framework. Please fix src/HGCal_DPG/clue_performance/plugins/BuildFile.xml file.
+****WARNING: Invalid tool FWCore/Framework. Please fix src/DYtoMuMu/ZToMuMu_ntuplizer/plugins/BuildFile.xml file.
+****WARNING: Invalid tool FWCore/Framework. Please fix src/DYtoMuMu/ZToMuMu_ntuplizer/src/BuildFile.xml file.
+****WARNING: Invalid tool FWCore/Framework. Please fix src/DYtoMuMu/patZtoMuMu/plugins/BuildFile.xml file.
+****WARNING: Invalid tool FWCore/Framework. Please fix src/DYtoMuMu/mytuple/plugins/BuildFile.xml file.
+****WARNING: Invalid tool FWCore/Framework. Please fix src/HardQCD_Generation_HGCal/Ntuple_Analyzer/plugins/BuildFile.xml file.
+****WARNING: Invalid tool FWCore/Framework. Please fix src/ZToMuMu_ntuplizer/ZToMuMu_ntuplizer/plugins/BuildFile.xml file.
+****WARNING: Invalid tool FWCore/Framework. Please fix src/ZToMuMu_ntuplizer/ZToMuMu_ntuplizer/src/BuildFile.xml file.
+****WARNING: Invalid tool FWCore/Framework. Please fix src/clue_performance/clue_performance/plugins/BuildFile.xml file.
+****WARNING: Invalid tool FWCore/Framework. Please fix src/patQCD_tuple/ntuple/plugins/BuildFile.xml file.
+****WARNING: Invalid tool FWCore/Framework. Please fix src/patQCD_tuple/myanalyzer/plugins/BuildFile.xml file.
+****WARNING: Invalid tool FWCore/Framework. Please fix src/qcdflat_nopileup_ntuplizer/ticl_ntupler/plugins/BuildFile.xml file.
+****WARNING: Invalid tool tmp/slc7_amd64_gcc900/cache/bf/src/qcdflat_nopileup_ntuplizer/ticl_ntupler/plugins/BuildFile_USE_ERR+=qcdflat_nopileup_ntuplizer/ticl_ntupler. Please fix src/qcdflat_nopileup_ntuplizer/ticl_ntupler/plugins/BuildFile.xml file.
+>> Entering Package HardQCD_Generation_HGCal/Ntuple_Analyzer
+>> Creating project symlinks
+>> Building  edm plugin tmp/slc7_amd64_gcc900/src/HardQCD_Generation_HGCal/Ntuple_Analyzer/plugins/HardQCD_Generation_HGCalNtuple_AnalyzerAuto/libHardQCD_Generation_HGCalNtuple_AnalyzerAuto.so
+gmake: *** [There are compilation/build errors. Please see the detail log above.] Error 2

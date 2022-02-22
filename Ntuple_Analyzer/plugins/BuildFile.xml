@@ -1,0 +1,4 @@
+<use name="DataFormats/PatCandidates"/>
+<use name="RecoLocalCalo/HGCalRecAlgos"/>
+<use name="DataFormats/CaloRecHit"/>
+<flags EDM_PLUGIN="1"/>
