@@ -80,19 +80,19 @@ process.configurationMetadata = cms.untracked.PSet(
 # Output definition
 from customized_event_content import *
 
-process.FEVTDEBUGHLToutput = cms.OutputModule("PoolOutputModule",
-    SelectEvents = cms.untracked.PSet(
-        SelectEvents = cms.vstring('generation_step')
-    ),
-    dataset = cms.untracked.PSet(
-        dataTier = cms.untracked.string('GEN-SIM-DIGI-RAW-RECO'),
-        filterName = cms.untracked.string('')
-    ),
-    fileName = cms.untracked.string('file:/eos/user/z/zhenggan/JetTaggingwithHGCal/test/0001.root'),
+#process.FEVTDEBUGHLToutput = cms.OutputModule("PoolOutputModule",
+#    SelectEvents = cms.untracked.PSet(
+#        SelectEvents = cms.vstring('generation_step')
+#    ),
+#    dataset = cms.untracked.PSet(
+#        dataTier = cms.untracked.string('GEN-SIM-DIGI-RAW-RECO'),
+#        filterName = cms.untracked.string('')
+#    ),
+#    fileName = cms.untracked.string('file:/eos/user/z/zhenggan/JetTaggingwithHGCal/test/0001.root'),
     
-    outputCommands = process.FEVTDEBUGEventContent.outputCommands,
-    splitLevel = cms.untracked.int32(0)
-)
+#    outputCommands = process.FEVTDEBUGEventContent.outputCommands,
+#    splitLevel = cms.untracked.int32(0)
+#)
 
 # Additional output definition
 
@@ -152,12 +152,34 @@ process.L1Reco_step = cms.Path(process.L1Reco)
 process.reconstruction_step = cms.Path(process.reconstruction)
 process.genfiltersummary_step = cms.EndPath(process.genFilterSummary)
 process.endjob_step = cms.EndPath(process.endOfProcess)
-process.FEVTDEBUGHLToutput_step = cms.EndPath(process.FEVTDEBUGHLToutput)
+#process.FEVTDEBUGHLToutput_step = cms.EndPath(process.FEVTDEBUGHLToutput)
+
+
+
+#PAT
+from PhysicsTools.PatAlgos.tools.helpers import getPatAlgosToolsTask
+
+process.out = cms.OutputModule("PoolOutputModule",
+    SelectEvents = cms.untracked.PSet(
+        SelectEvents = cms.vstring('generation_step')
+    ),
+    dataset = cms.untracked.PSet(
+        dataTier = cms.untracked.string('GEN-SIM-DIGI-RAW-RECO'),
+        filterName = cms.untracked.string('')
+    ),
+    
+    splitLevel = cms.untracked.int32(0),
+    fileName = cms.untracked.string(''),
+)
+
+patAlgosToolsTask = getPatAlgosToolsTask(process)
+
+process.outpath = cms.EndPath(process.out, patAlgosToolsTask)
 
 # Schedule definition
 process.schedule = cms.Schedule(process.generation_step,process.genfiltersummary_step,process.simulation_step,process.digitisation_step,process.L1TrackTrigger_step,process.L1simulation_step,process.digi2raw_step)
 process.schedule.extend(process.HLTSchedule)
-process.schedule.extend([process.raw2digi_step,process.L1Reco_step,process.reconstruction_step,process.endjob_step,process.FEVTDEBUGHLToutput_step])
+process.schedule.extend([process.raw2digi_step,process.L1Reco_step,process.reconstruction_step,process.endjob_step,process.outpath])#,process.FEVTDEBUGHLToutput_step])
 from PhysicsTools.PatAlgos.tools.helpers import associatePatAlgosToolsTask
 associatePatAlgosToolsTask(process)
 # filter all path with the production filter sequence
