@@ -1,0 +1,28 @@
+DEBUG 2022-02-22 08:44:48.959 UTC: 	 CRAB Client version: v3.220210
+DEBUG 2022-02-22 08:44:48.960 UTC: 	 Running on: Linux lxplus717.cern.ch 3.10.0-1160.49.1.el7.x86_64 #1 SMP Tue Nov 30 15:51:32 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-02-22 08:44:48.960 UTC: 	 Executing command: 'submit'
+DEBUG 2022-02-22 08:44:48.961 UTC: 	 Found CRAB cache file /afs/cern.ch/user/z/zhenggan/.crab3
+DEBUG 2022-02-22 08:47:03.228 UTC: 	 CRAB Client version: v3.220210
+DEBUG 2022-02-22 08:47:03.228 UTC: 	 Running on: Linux lxplus717.cern.ch 3.10.0-1160.49.1.el7.x86_64 #1 SMP Tue Nov 30 15:51:32 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-02-22 08:47:03.228 UTC: 	 Executing command: 'submit'
+DEBUG 2022-02-22 08:47:03.229 UTC: 	 Found CRAB cache file /afs/cern.ch/user/z/zhenggan/.crab3
+INFO 2022-02-22 08:47:03.230 UTC: 	 Will use CRAB configuration file ./crab_PAT_Production.py
+DEBUG 2022-02-22 08:47:03.230 UTC: 	 Loading CRAB configuration file.
+DEBUG 2022-02-22 08:47:03.231 UTC: 	 Will use CRAB PrivateMC plugin (i.e. will run a MC generation job type).
+ERROR 2022-02-22 08:47:03.231 UTC: 	 Working area '/afs/cern.ch/user/z/zhenggan/work_space/CMSSW_12_1_0_pre4/src/HardQCD_Generation_HGCal/crab_projects_02Feb_2022_PAT_Test/crab_HardQCD_02Feb_2022_PAT_Test' already exists 
+Please change the requestName in the config file
+ERROR 2022-02-22 08:47:03.232 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 162, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 147, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/SubCommand.py", line 318, in __init__
+    self.requestarea, self.requestname, self.logfile = createWorkArea(
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+CRABClient.ClientExceptions.ConfigException: Working area '/afs/cern.ch/user/z/zhenggan/work_space/CMSSW_12_1_0_pre4/src/HardQCD_Generation_HGCal/crab_projects_02Feb_2022_PAT_Test/crab_HardQCD_02Feb_2022_PAT_Test' already exists 
+Please change the requestName in the config file
+INFO 2022-02-22 08:47:03.235 UTC: 	 Log file is /afs/cern.ch/user/z/zhenggan/work_space/CMSSW_12_1_0_pre4/src/HardQCD_Generation_HGCal/crab.log
