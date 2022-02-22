@@ -1,3 +1,7 @@
+<use name="root"/>
+<use name="FWCore/ParameterSet"/>
+<use name="FWCore/PluginManager"/>
+<use name="FWCore/Utilities"/>
 <use name="DataFormats/PatCandidates"/>
 <use name="RecoLocalCalo/HGCalRecAlgos"/>
 <use name="DataFormats/CaloRecHit"/>

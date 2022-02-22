@@ -141,10 +141,12 @@ void Ntuple_Analyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& i
     //int Leading_Jet = -1;
     //double max_pt = -100;
     //int jet_index = 0 ;
-    /*
     for(edm::View<pat::Jet>::const_iterator jet = jets->begin();jet != jets->end();++jet)
     {
         int partonFlavour = TMath::Abs(jet->partonFlavour()); 
+    
+        std::cout<<partonFlavour<<std::endl;
+        /*
         if(partonFlavour ==21 || (partonFlavour >0 || partonFlavour <3 ))
         {
             if(jet->pt() > max_pt)
@@ -155,8 +157,8 @@ void Ntuple_Analyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& i
             }
         }
         jet_index++;
+    */
     }
-*/
     /*
     double eta = TMath::Abs(jets->at(Leading_Jet).eta()) ;
     if( eta < 2.8 && eta > 1.7)

@@ -1,6 +1,6 @@
-from template_cff import * 
+from HardQCD_Generation_HGCal.Ntuple_Analyzer.template_cff import * 
 
-process.source.fileNames = cms.untracked.vstring('/eos/user/z/zhenggan/JetTaggingwithHGCal/test/0001_patTuple.root')
+process.source.fileNames = cms.untracked.vstring('file:/eos/user/z/zhenggan/JetTaggingwithHGCal/test/0001_patTuple.root')
 process.analyzer = cms.EDAnalyzer('Ntuple_Analyzer',
         LC_src = cms.InputTag('hgcalLayerClusters'),
         Jet_src = cms.InputTag('selectedPatJets'))
