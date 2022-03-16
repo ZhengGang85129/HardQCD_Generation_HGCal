@@ -12,4 +12,4 @@
 - crab submit -c crab_GENSIM_Production.py
 - crab submit -c crab_PAT_Production.py
 
-After this, jump to PAT directory.
+After this, jump to Ntuple directory.
