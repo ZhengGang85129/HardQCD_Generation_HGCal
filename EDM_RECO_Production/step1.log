@@ -1,0 +1,7 @@
+GEN,SIM,ENDJOB
+We have determined that this is simulation (if not, rerun cmsDriver.py with --data)
+Step: GEN Spec: 
+Loading generator fragment from Configuration.Generator.QCD_Pt_600_800_14TeV_TuneCUETP8M1_cfi
+Step: SIM Spec: 
+Step: ENDJOB Spec: 
+Config file QCD_Pt_600_800_14TeV_TuneCUETP8M1_cfi_py_GEN_SIM.py created

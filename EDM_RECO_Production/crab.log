@@ -26,3 +26,321 @@ Traceback (most recent call last):
 CRABClient.ClientExceptions.ConfigException: Working area '/afs/cern.ch/user/z/zhenggan/work_space/CMSSW_12_1_0_pre4/src/HardQCD_Generation_HGCal/crab_projects_02Feb_2022_PAT_Test/crab_HardQCD_02Feb_2022_PAT_Test' already exists 
 Please change the requestName in the config file
 INFO 2022-02-22 08:47:03.235 UTC: 	 Log file is /afs/cern.ch/user/z/zhenggan/work_space/CMSSW_12_1_0_pre4/src/HardQCD_Generation_HGCal/crab.log
+DEBUG 2022-02-22 12:04:15.496 UTC: 	 CRAB Client version: v3.220210
+DEBUG 2022-02-22 12:04:15.496 UTC: 	 Running on: Linux lxplus717.cern.ch 3.10.0-1160.49.1.el7.x86_64 #1 SMP Tue Nov 30 15:51:32 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-02-22 12:04:15.496 UTC: 	 Executing command: 'resubmit'
+DEBUG 2022-02-22 12:04:15.497 UTC: 	 Found CRAB cache file /afs/cern.ch/user/z/zhenggan/.crab3
+ERROR 2022-02-22 12:04:15.500 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/z/zhenggan/work_space/CMSSW_12_1_0_pre4/src/HardQCD_Generation_HGCal/EDM_RECO_Production/crab_projects_02Feb_2022_PAT
+ERROR 2022-02-22 12:04:15.501 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 162, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 147, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/resubmit.py", line 30, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/SubCommand.py", line 508, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/SubCommand.py", line 502, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/ClientUtilities.py", line 440, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/z/zhenggan/work_space/CMSSW_12_1_0_pre4/src/HardQCD_Generation_HGCal/EDM_RECO_Production/crab_projects_02Feb_2022_PAT
+INFO 2022-02-22 12:04:15.518 UTC: 	 Log file is /afs/cern.ch/user/z/zhenggan/work_space/CMSSW_12_1_0_pre4/src/HardQCD_Generation_HGCal/EDM_RECO_Production/crab.log
+DEBUG 2022-02-23 04:45:48.447 UTC: 	 CRAB Client version: v3.220210
+DEBUG 2022-02-23 04:45:48.448 UTC: 	 Running on: Linux lxplus7108.cern.ch 3.10.0-1160.49.1.el7.x86_64 #1 SMP Tue Nov 30 15:51:32 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-02-23 04:45:48.448 UTC: 	 Executing command: 'status'
+DEBUG 2022-02-23 04:45:48.448 UTC: 	 Found CRAB cache file /afs/cern.ch/user/z/zhenggan/.crab3
+ERROR 2022-02-23 04:45:48.506 UTC: 	 Error: crab_projects_02Feb_202 is not a valid CRAB project directory.
+ERROR 2022-02-23 04:45:48.506 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 162, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 147, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/SubCommand.py", line 642, in validateOptions
+    raise ConfigurationException(msg)
+CRABClient.ClientExceptions.ConfigurationException: [91mError[0m: crab_projects_02Feb_202 is not a valid CRAB project directory.
+INFO 2022-02-23 04:45:48.530 UTC: 	 Log file is /afs/cern.ch/user/z/zhenggan/work_space/CMSSW_12_1_0_pre4/src/HardQCD_Generation_HGCal/EDM_RECO_Production/crab.log
+DEBUG 2022-02-23 04:46:03.804 UTC: 	 CRAB Client version: v3.220210
+DEBUG 2022-02-23 04:46:03.804 UTC: 	 Running on: Linux lxplus7108.cern.ch 3.10.0-1160.49.1.el7.x86_64 #1 SMP Tue Nov 30 15:51:32 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-02-23 04:46:03.804 UTC: 	 Executing command: 'status'
+DEBUG 2022-02-23 04:46:03.804 UTC: 	 Found CRAB cache file /afs/cern.ch/user/z/zhenggan/.crab3
+ERROR 2022-02-23 04:46:03.828 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/z/zhenggan/work_space/CMSSW_12_1_0_pre4/src/HardQCD_Generation_HGCal/EDM_RECO_Production/crab_projects_02Feb_2022_PAT
+ERROR 2022-02-23 04:46:03.828 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 162, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 147, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/SubCommand.py", line 508, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/SubCommand.py", line 502, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/ClientUtilities.py", line 440, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/z/zhenggan/work_space/CMSSW_12_1_0_pre4/src/HardQCD_Generation_HGCal/EDM_RECO_Production/crab_projects_02Feb_2022_PAT
+INFO 2022-02-23 04:46:03.831 UTC: 	 Log file is /afs/cern.ch/user/z/zhenggan/work_space/CMSSW_12_1_0_pre4/src/HardQCD_Generation_HGCal/EDM_RECO_Production/crab.log
+DEBUG 2022-02-23 05:08:19.334 UTC: 	 CRAB Client version: v3.220210
+DEBUG 2022-02-23 05:08:19.334 UTC: 	 Running on: Linux lxplus7108.cern.ch 3.10.0-1160.49.1.el7.x86_64 #1 SMP Tue Nov 30 15:51:32 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-02-23 05:08:19.334 UTC: 	 Executing command: 'status'
+DEBUG 2022-02-23 05:08:19.334 UTC: 	 Found CRAB cache file /afs/cern.ch/user/z/zhenggan/.crab3
+ERROR 2022-02-23 05:08:19.335 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/z/zhenggan/work_space/CMSSW_12_1_0_pre4/src/HardQCD_Generation_HGCal/EDM_RECO_Production/crab_projects_02Feb_2022_PAT/crab_HardQCD_02Feb_2022_PAT
+ERROR 2022-02-23 05:08:19.335 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 162, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 147, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/status.py", line 48, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/SubCommand.py", line 508, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/SubCommand.py", line 502, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/ClientUtilities.py", line 440, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/z/zhenggan/work_space/CMSSW_12_1_0_pre4/src/HardQCD_Generation_HGCal/EDM_RECO_Production/crab_projects_02Feb_2022_PAT/crab_HardQCD_02Feb_2022_PAT
+INFO 2022-02-23 05:08:19.341 UTC: 	 Log file is /afs/cern.ch/user/z/zhenggan/work_space/CMSSW_12_1_0_pre4/src/HardQCD_Generation_HGCal/EDM_RECO_Production/crab.log
+DEBUG 2022-02-23 05:09:15.317 UTC: 	 CRAB Client version: v3.220210
+DEBUG 2022-02-23 05:09:15.318 UTC: 	 Running on: Linux lxplus7108.cern.ch 3.10.0-1160.49.1.el7.x86_64 #1 SMP Tue Nov 30 15:51:32 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-02-23 05:09:15.318 UTC: 	 Executing command: 'submit'
+DEBUG 2022-02-23 05:09:15.318 UTC: 	 Found CRAB cache file /afs/cern.ch/user/z/zhenggan/.crab3
+ERROR 2022-02-23 05:09:15.319 UTC: 	 CRAB configuration file crabConfig.py not found.
+ERROR 2022-02-23 05:09:15.319 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 162, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 147, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/SubCommand.py", line 316, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/SubCommand.py", line 51, in loadConfig
+    raise ConfigurationException("CRAB configuration file %s not found." % (configname))
+CRABClient.ClientExceptions.ConfigurationException: CRAB configuration file crabConfig.py not found.
+INFO 2022-02-23 05:09:15.322 UTC: 	 Log file is /afs/cern.ch/user/z/zhenggan/work_space/CMSSW_12_1_0_pre4/src/HardQCD_Generation_HGCal/EDM_RECO_Production/crab.log
+DEBUG 2022-02-23 05:09:28.981 UTC: 	 CRAB Client version: v3.220210
+DEBUG 2022-02-23 05:09:28.981 UTC: 	 Running on: Linux lxplus7108.cern.ch 3.10.0-1160.49.1.el7.x86_64 #1 SMP Tue Nov 30 15:51:32 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-02-23 05:09:28.981 UTC: 	 Executing command: 'submit'
+DEBUG 2022-02-23 05:09:28.981 UTC: 	 Found CRAB cache file /afs/cern.ch/user/z/zhenggan/.crab3
+INFO 2022-02-23 05:09:28.982 UTC: 	 Will use CRAB configuration file crab_PAT_Production.py
+DEBUG 2022-02-23 05:09:28.982 UTC: 	 Loading CRAB configuration file.
+DEBUG 2022-02-23 05:09:28.984 UTC: 	 Will use CRAB PrivateMC plugin (i.e. will run a MC generation job type).
+ERROR 2022-02-23 05:09:28.984 UTC: 	 Working area '/afs/cern.ch/user/z/zhenggan/work_space/CMSSW_12_1_0_pre4/src/HardQCD_Generation_HGCal/EDM_RECO_Production/crab_projects_02Feb_2022_PAT/crab_HardQCD_02Feb_2022_PAT' already exists 
+Please change the requestName in the config file
+ERROR 2022-02-23 05:09:28.984 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 162, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 147, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/SubCommand.py", line 318, in __init__
+    self.requestarea, self.requestname, self.logfile = createWorkArea(
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+CRABClient.ClientExceptions.ConfigException: Working area '/afs/cern.ch/user/z/zhenggan/work_space/CMSSW_12_1_0_pre4/src/HardQCD_Generation_HGCal/EDM_RECO_Production/crab_projects_02Feb_2022_PAT/crab_HardQCD_02Feb_2022_PAT' already exists 
+Please change the requestName in the config file
+INFO 2022-02-23 05:09:28.987 UTC: 	 Log file is /afs/cern.ch/user/z/zhenggan/work_space/CMSSW_12_1_0_pre4/src/HardQCD_Generation_HGCal/EDM_RECO_Production/crab.log
+DEBUG 2022-02-23 06:09:41.312 UTC: 	 CRAB Client version: v3.220210
+DEBUG 2022-02-23 06:09:41.313 UTC: 	 Running on: Linux lxplus7108.cern.ch 3.10.0-1160.49.1.el7.x86_64 #1 SMP Tue Nov 30 15:51:32 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-02-23 06:09:41.313 UTC: 	 Executing command: 'submit'
+DEBUG 2022-02-23 06:09:41.313 UTC: 	 Found CRAB cache file /afs/cern.ch/user/z/zhenggan/.crab3
+INFO 2022-02-23 06:09:41.314 UTC: 	 Will use CRAB configuration file crab_PAT_Production.py
+DEBUG 2022-02-23 06:09:41.314 UTC: 	 Loading CRAB configuration file.
+DEBUG 2022-02-23 06:09:41.319 UTC: 	 Will use CRAB PrivateMC plugin (i.e. will run a MC generation job type).
+ERROR 2022-02-23 06:09:41.319 UTC: 	 Working area '/afs/cern.ch/user/z/zhenggan/work_space/CMSSW_12_1_0_pre4/src/HardQCD_Generation_HGCal/EDM_RECO_Production/crab_projects_02Feb_2022_PAT/crab_HardQCD_02Feb_2022_PAT' already exists 
+Please change the requestName in the config file
+ERROR 2022-02-23 06:09:41.319 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 162, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 147, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/SubCommand.py", line 318, in __init__
+    self.requestarea, self.requestname, self.logfile = createWorkArea(
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+CRABClient.ClientExceptions.ConfigException: Working area '/afs/cern.ch/user/z/zhenggan/work_space/CMSSW_12_1_0_pre4/src/HardQCD_Generation_HGCal/EDM_RECO_Production/crab_projects_02Feb_2022_PAT/crab_HardQCD_02Feb_2022_PAT' already exists 
+Please change the requestName in the config file
+INFO 2022-02-23 06:09:41.325 UTC: 	 Log file is /afs/cern.ch/user/z/zhenggan/work_space/CMSSW_12_1_0_pre4/src/HardQCD_Generation_HGCal/EDM_RECO_Production/crab.log
+DEBUG 2022-02-23 08:15:39.943 UTC: 	 CRAB Client version: v3.220210
+DEBUG 2022-02-23 08:15:39.943 UTC: 	 Running on: Linux lxplus7108.cern.ch 3.10.0-1160.49.1.el7.x86_64 #1 SMP Tue Nov 30 15:51:32 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-02-23 08:15:39.943 UTC: 	 Executing command: 'submit'
+DEBUG 2022-02-23 08:15:39.945 UTC: 	 Found CRAB cache file /afs/cern.ch/user/z/zhenggan/.crab3
+ERROR 2022-02-23 08:15:39.964 UTC: 	 CRAB configuration file --config=crab_PAT_Production.py not found.
+ERROR 2022-02-23 08:15:39.965 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 162, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 147, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/SubCommand.py", line 316, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/SubCommand.py", line 51, in loadConfig
+    raise ConfigurationException("CRAB configuration file %s not found." % (configname))
+CRABClient.ClientExceptions.ConfigurationException: CRAB configuration file --config=crab_PAT_Production.py not found.
+INFO 2022-02-23 08:15:39.991 UTC: 	 Log file is /afs/cern.ch/user/z/zhenggan/work_space/CMSSW_12_1_0_pre4/src/HardQCD_Generation_HGCal/EDM_RECO_Production/crab.log
+DEBUG 2022-02-23 08:53:31.512 UTC: 	 CRAB Client version: v3.220210
+DEBUG 2022-02-23 08:53:31.513 UTC: 	 Running on: Linux lxplus778.cern.ch 3.10.0-1160.53.1.el7.x86_64 #1 SMP Fri Jan 14 13:59:45 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-02-23 08:53:31.513 UTC: 	 Executing command: 'kill'
+DEBUG 2022-02-23 08:53:31.513 UTC: 	 Found CRAB cache file /afs/cern.ch/user/z/zhenggan/.crab3
+ERROR 2022-02-23 08:53:31.515 UTC: 	 Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/z/zhenggan/work_space/CMSSW_12_1_0_pre4/src/HardQCD_Generation_HGCal/EDM_RECO_Production/crab_projects_02Feb_2022_GEN_SIM
+ERROR 2022-02-23 08:53:31.515 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 162, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 147, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/SubCommand.py", line 275, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/SubCommand.py", line 646, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/SubCommand.py", line 508, in loadLocalCache
+    raise ex
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/SubCommand.py", line 502, in loadLocalCache
+    self.cachedinfo, self.logfile = loadCache(self.requestarea, self.logger)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/ClientUtilities.py", line 440, in loadCache
+    raise CachefileNotFoundException(msg)
+CRABClient.ClientExceptions.CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /afs/cern.ch/user/z/zhenggan/work_space/CMSSW_12_1_0_pre4/src/HardQCD_Generation_HGCal/EDM_RECO_Production/crab_projects_02Feb_2022_GEN_SIM
+INFO 2022-02-23 08:53:31.523 UTC: 	 Log file is /afs/cern.ch/user/z/zhenggan/work_space/CMSSW_12_1_0_pre4/src/HardQCD_Generation_HGCal/EDM_RECO_Production/crab.log
+DEBUG 2022-02-23 09:00:06.377 UTC: 	 CRAB Client version: v3.220210
+DEBUG 2022-02-23 09:00:06.377 UTC: 	 Running on: Linux lxplus778.cern.ch 3.10.0-1160.53.1.el7.x86_64 #1 SMP Fri Jan 14 13:59:45 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-02-23 09:00:06.377 UTC: 	 Executing command: 'submit'
+DEBUG 2022-02-23 09:00:06.377 UTC: 	 Found CRAB cache file /afs/cern.ch/user/z/zhenggan/.crab3
+INFO 2022-02-23 09:00:06.378 UTC: 	 Will use CRAB configuration file ./crab_PAT_Production.py
+DEBUG 2022-02-23 09:00:06.378 UTC: 	 Loading CRAB configuration file.
+DEBUG 2022-02-23 09:00:06.381 UTC: 	 Will use CRAB PrivateMC plugin (i.e. will run a MC generation job type).
+ERROR 2022-02-23 09:00:06.381 UTC: 	 Working area '/afs/cern.ch/user/z/zhenggan/work_space/CMSSW_12_1_0_pre4/src/HardQCD_Generation_HGCal/EDM_RECO_Production/crab_projects_02Feb_2022_GEN_SIM/crab_HardQCD_02Feb_2022_GEN_SIM' already exists 
+Please change the requestName in the config file
+ERROR 2022-02-23 09:00:06.381 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 162, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 147, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/SubCommand.py", line 318, in __init__
+    self.requestarea, self.requestname, self.logfile = createWorkArea(
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/ClientUtilities.py", line 387, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+CRABClient.ClientExceptions.ConfigException: Working area '/afs/cern.ch/user/z/zhenggan/work_space/CMSSW_12_1_0_pre4/src/HardQCD_Generation_HGCal/EDM_RECO_Production/crab_projects_02Feb_2022_GEN_SIM/crab_HardQCD_02Feb_2022_GEN_SIM' already exists 
+Please change the requestName in the config file
+INFO 2022-02-23 09:00:06.384 UTC: 	 Log file is /afs/cern.ch/user/z/zhenggan/work_space/CMSSW_12_1_0_pre4/src/HardQCD_Generation_HGCal/EDM_RECO_Production/crab.log
+DEBUG 2022-02-24 10:40:54.198 UTC: 	 CRAB Client version: v3.220210
+DEBUG 2022-02-24 10:40:54.199 UTC: 	 Running on: Linux lxplus708.cern.ch 3.10.0-1160.53.1.el7.x86_64 #1 SMP Fri Jan 14 13:59:45 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-02-24 10:40:54.199 UTC: 	 Executing command: 'submit'
+DEBUG 2022-02-24 10:40:54.199 UTC: 	 Found CRAB cache file /afs/cern.ch/user/z/zhenggan/.crab3
+INFO 2022-02-24 10:40:54.200 UTC: 	 Will use CRAB configuration file pat_workflow_cfi.py
+DEBUG 2022-02-24 10:40:54.200 UTC: 	 Loading CRAB configuration file.
+ERROR 2022-02-24 10:41:40.707 UTC: 	 Error while loading CRAB configuration:
+No module named 'stage_RECO_py_DIGI_L1TrackTrigger_L1_DIGI2RAW_HLT_RAW2DIGI_L1Reco_RECO.py'; 'stage_RECO_py_DIGI_L1TrackTrigger_L1_DIGI2RAW_HLT_RAW2DIGI_L1Reco_RECO' is not a package
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3FAQ
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+ERROR 2022-02-24 10:41:40.708 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/WMCore/Configuration.py", line 326, in loadConfigurationFile
+    modRef = imp.load_module(cfgBaseName, modPath[0],
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc900/external/python3/3.9.6/lib/python3.9/imp.py", line 234, in load_module
+    return load_source(name, filename, file)
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc900/external/python3/3.9.6/lib/python3.9/imp.py", line 171, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 711, in _load
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/afs/cern.ch/user/z/zhenggan/work_space/CMSSW_12_1_0_pre4/src/HardQCD_Generation_HGCal/EDM_RECO_Production/pat_workflow_cfi.py", line 9, in <module>
+    from stage_RECO_py_DIGI_L1TrackTrigger_L1_DIGI2RAW_HLT_RAW2DIGI_L1Reco_RECO.py import *
+ModuleNotFoundError: No module named 'stage_RECO_py_DIGI_L1TrackTrigger_L1_DIGI2RAW_HLT_RAW2DIGI_L1Reco_RECO.py'; 'stage_RECO_py_DIGI_L1TrackTrigger_L1_DIGI2RAW_HLT_RAW2DIGI_L1Reco_RECO' is not a package
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/SubCommand.py", line 55, in loadConfig
+    self.configuration = loadConfigurationFile(os.path.abspath(configname))
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/WMCore/Configuration.py", line 334, in loadConfigurationFile
+    raise RuntimeError(msg)
+RuntimeError: Unable to load Configuration File:
+/afs/cern.ch/user/z/zhenggan/work_space/CMSSW_12_1_0_pre4/src/HardQCD_Generation_HGCal/EDM_RECO_Production/pat_workflow_cfi.py
+Due to error:
+No module named 'stage_RECO_py_DIGI_L1TrackTrigger_L1_DIGI2RAW_HLT_RAW2DIGI_L1Reco_RECO.py'; 'stage_RECO_py_DIGI_L1TrackTrigger_L1_DIGI2RAW_HLT_RAW2DIGI_L1Reco_RECO' is not a packageTraceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/WMCore/Configuration.py", line 326, in loadConfigurationFile
+    modRef = imp.load_module(cfgBaseName, modPath[0],
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc900/external/python3/3.9.6/lib/python3.9/imp.py", line 234, in load_module
+    return load_source(name, filename, file)
+  File "/cvmfs/cms.cern.ch/slc7_amd64_gcc900/external/python3/3.9.6/lib/python3.9/imp.py", line 171, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 711, in _load
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/afs/cern.ch/user/z/zhenggan/work_space/CMSSW_12_1_0_pre4/src/HardQCD_Generation_HGCal/EDM_RECO_Production/pat_workflow_cfi.py", line 9, in <module>
+    from stage_RECO_py_DIGI_L1TrackTrigger_L1_DIGI2RAW_HLT_RAW2DIGI_L1Reco_RECO.py import *
+ModuleNotFoundError: No module named 'stage_RECO_py_DIGI_L1TrackTrigger_L1_DIGI2RAW_HLT_RAW2DIGI_L1Reco_RECO.py'; 'stage_RECO_py_DIGI_L1TrackTrigger_L1_DIGI2RAW_HLT_RAW2DIGI_L1Reco_RECO' is not a package
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 162, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 147, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/SubCommand.py", line 316, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/SubCommand.py", line 89, in loadConfig
+    raise ConfigurationException(configmsg)
+CRABClient.ClientExceptions.ConfigurationException: Error while loading CRAB configuration:
+No module named 'stage_RECO_py_DIGI_L1TrackTrigger_L1_DIGI2RAW_HLT_RAW2DIGI_L1Reco_RECO.py'; 'stage_RECO_py_DIGI_L1TrackTrigger_L1_DIGI2RAW_HLT_RAW2DIGI_L1Reco_RECO' is not a package
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3FAQ
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+INFO 2022-02-24 10:41:41.329 UTC: 	 Log file is /afs/cern.ch/user/z/zhenggan/work_space/CMSSW_12_1_0_pre4/src/HardQCD_Generation_HGCal/EDM_RECO_Production/crab.log
+DEBUG 2022-02-24 10:53:58.548 UTC: 	 CRAB Client version: v3.220210
+DEBUG 2022-02-24 10:53:58.548 UTC: 	 Running on: Linux lxplus708.cern.ch 3.10.0-1160.53.1.el7.x86_64 #1 SMP Fri Jan 14 13:59:45 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2022-02-24 10:53:58.549 UTC: 	 Executing command: 'submit'
+DEBUG 2022-02-24 10:53:58.549 UTC: 	 Found CRAB cache file /afs/cern.ch/user/z/zhenggan/.crab3
+ERROR 2022-02-24 10:53:58.550 UTC: 	 CRAB configuration file crab_PA not found.
+ERROR 2022-02-24 10:53:58.550 UTC: 	 Caught ClientException exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 162, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/bin/crab.py", line 147, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/submit.py", line 36, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/SubCommand.py", line 316, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.220210.00/lib/CRABClient/Commands/SubCommand.py", line 51, in loadConfig
+    raise ConfigurationException("CRAB configuration file %s not found." % (configname))
+CRABClient.ClientExceptions.ConfigurationException: CRAB configuration file crab_PA not found.
+INFO 2022-02-24 10:53:58.553 UTC: 	 Log file is /afs/cern.ch/user/z/zhenggan/work_space/CMSSW_12_1_0_pre4/src/HardQCD_Generation_HGCal/EDM_RECO_Production/crab.log

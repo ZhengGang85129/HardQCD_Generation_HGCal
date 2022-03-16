@@ -5,5 +5,6 @@ customized_EventContent=[
         'keep *_selectedPat*__*',
         'keep *_selectedPat*_pfCandidates_*',
         'keep *_hgcalLayerClusters*__*',
-        'keep *_pfTICL*_*_*'
+        'keep *_pfTICL*_*_*',
+        'keep *_ticlTrackstersMerge*_*_*'
         ]
