@@ -16,6 +16,8 @@ process.load("FWCore.MessageLogger.MessageLogger_cfi")
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
 process.load("PhysicsTools.PatAlgos.producersLayer1.jetProducer_cff")
 process.load("PhysicsTools.PatAlgos.selectionLayer1.jetSelector_cfi")
+
+
 from Configuration.AlCa.GlobalTag import GlobalTag
 
 process.options.wantSummary = cms.untracked.bool(True)
@@ -26,10 +28,11 @@ patAlgosToolsTask = getPatAlgosToolsTask(process)
 patAlgosToolsTask.add(process.makePatJetsTask)
 process.patJets.embedPFCandidates = cms.bool(True)
 
-process.source.fileNames = cms.untracked.vstring('file:./GENSIM.root')
+#process.source.fileNames = cms.untracked.vstring('file:./GENSIM.root')
 
-process.selectedPatJets.cut ='abs(eta) < 2.8 & abs(eta) > 1.7 &((abs(partonFlavour) > 0 && abs(partonFlavour) <= 3) || partonFlavour == 21)'
 patAlgosToolsTask.add(process.selectedPatJets)
+#process.load('PhysicsTools.PatAlgos.cleaningLayer1.jetCleaner_cfi')
+#patAlgosToolsTask.add(process.cleanPatJets)
 
 
 

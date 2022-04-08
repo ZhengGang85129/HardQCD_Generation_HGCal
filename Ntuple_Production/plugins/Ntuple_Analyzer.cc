@@ -65,11 +65,14 @@ private:
   TTree *tree = new TTree("Events","Events");
   double jet_pt;
   double jet_eta;
+  float jet_charge;
   double jet_phi;
   double jet_px;
   double jet_py;
   double jet_pz;
   double jet_energy;
+  int jet_neutralMultiplicity;
+  int jet_chargedMultiplicity;
   int jet_partonFlavour;
   int jet_hadronFlavour;
   //int jet_key[ksize];
@@ -82,7 +85,7 @@ private:
   double constituent_py[ksize];
   double constituent_pz[ksize];
   double constituent_energy[ksize];
-  double constituent_charge[ksize]; 
+  int constituent_charge[ksize]; 
    
   int cluster_number;
   int cluster_Layer[ksize2];
@@ -143,17 +146,15 @@ void Ntuple_Analyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& i
     int Leading_Jet = -200;
     double max_pt = -100;
     int jet_index = 0 ;
-    for(edm::View<pat::Jet>::const_iterator jet = jets->begin();jet != jets->end();++jet)
+    for(edm::View<pat::Jet>::const_iterator Jet = jets->begin();Jet != jets->end();++Jet)
     {
+        const pat::Jet * jet = &(jets->at(jet_index));
         int partonFlavour = TMath::Abs(jet->partonFlavour()); 
-        if(partonFlavour ==21 || (partonFlavour >0 || partonFlavour <3 ))
+        if(jet->pt() > max_pt && jet->isPFJet())
         {
-            if(jet->pt() > max_pt)
-            {
-                Leading_Jet = jet_index;
-                max_pt = jet->pt();
-                
-            }
+            Leading_Jet = jet_index;
+            max_pt = jet->pt();
+            
         }
         jet_index++;
     }
@@ -162,59 +163,68 @@ void Ntuple_Analyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& i
     if(Leading_Jet <0){
         FLAG_Leading_Jet = false;
     }
-    if (FLAG_Leading_Jet){
+    if(FLAG_Leading_Jet){
+        bool FLAG_On_PartonFlavour = false;
         const pat::Jet * jet = &(jets->at(Leading_Jet));
-        jet_px = jet->px();
-        jet_py = jet->py();
-        jet_pz = jet->pz();
-        jet_energy = jet->energy();
-        jet_eta = jet->eta();
-        jet_phi = jet->phi();
-        jet_pt = jet->pt();
-        jet_partonFlavour = jet->partonFlavour();
-        jet_hadronFlavour = jet->hadronFlavour();
-        unsigned dn = jet->numberOfDaughters();
-        constituent_number = 0 ; 
-        for(unsigned idx = 0 ; idx < dn ; idx++)
-        {
-            const reco::Candidate *cand  = (jet->daughter(idx));
-            constituent_px[idx] = cand->px();
-            constituent_py[idx] = cand->py();
-            constituent_pz[idx] = cand->pz();
-            constituent_energy[idx] = cand->energy();
-            constituent_pt[idx] = cand->pt();
-            constituent_eta[idx] = cand->eta();
-            constituent_phi[idx] = cand->phi();
-            constituent_charge[idx] = cand->charge();
-            constituent_number++;
+        int partonFlavour = TMath::Abs(jet->partonFlavour());
+        if(partonFlavour ==21 ||(partonFlavour<=3)){
+           FLAG_On_PartonFlavour =  true; 
         }
-        cluster_number= 0;
-        edm::Handle<edm::View<reco::CaloCluster>> clusters;
-        iEvent.getByToken(cluster_token,clusters);
-        for(auto cluster = clusters->begin() ; cluster != clusters->end(); cluster++)
-        {
-            //double deta = cluster->eta() - jet_eta;
-            //double dphi = cluster->phi() - jet_phi;
-//            double dR = TMath::Sqrt(deta*deta + dphi*dphi);
-                cluster_energy[cluster_number] = cluster->energy();
-                cluster_eta[cluster_number] = cluster->eta();
-                cluster_phi[cluster_number] = cluster->phi();
-                cluster_z[cluster_number] = cluster->z();
-                cluster_size[cluster_number] = cluster->size();
-                
-                if(TMath::Abs(cluster->z())>367.699 && tool->getLayer(cluster->seed()) <28 )
-                {
-                    cluster_Layer[cluster_number] = tool->getLayer(cluster->seed())+28;
-                }
-                else{
-                    cluster_Layer[cluster_number] = tool->getLayer(cluster->seed());
-                }
-                cluster_number++;
+        if (FLAG_On_PartonFlavour){
+            jet_px = jet->px();
+            jet_py = jet->py();
+            jet_pz = jet->pz();
+            jet_energy = jet->energy();
+            jet_eta = jet->eta();
+            jet_phi = jet->phi();
+            jet_pt = jet->pt();
+            jet_partonFlavour = partonFlavour;
+            jet_hadronFlavour = jet->hadronFlavour();
+            jet_neutralMultiplicity = jet->neutralMultiplicity();
+            jet_chargedMultiplicity = jet->chargedMultiplicity();
+            jet_charge = jet->jetCharge();
+            unsigned dn = jet->numberOfDaughters();
+            constituent_number = 0 ; 
+            for(unsigned idx = 0 ; idx < dn ; idx++)
+            {
+                const reco::Candidate *cand  = (jet->daughter(idx));
+                constituent_px[idx] = cand->px();
+                constituent_py[idx] = cand->py();
+                constituent_pz[idx] = cand->pz();
+                constituent_energy[idx] = cand->energy();
+                constituent_pt[idx] = cand->pt();
+                constituent_eta[idx] = cand->eta();
+                constituent_phi[idx] = cand->phi();
+                constituent_charge[idx] = cand->charge();
+                constituent_number+=1;
+            }
+            cluster_number= 0;
+            edm::Handle<edm::View<reco::CaloCluster>> clusters;
+            iEvent.getByToken(cluster_token,clusters);
+            for(auto cluster = clusters->begin() ; cluster != clusters->end(); cluster++)
+            {
+                //double deta = cluster->eta() - jet_eta;
+                //double dphi = cluster->phi() - jet_phi;
+    //            double dR = TMath::Sqrt(deta*deta + dphi*dphi);
+                    cluster_energy[cluster_number] = cluster->energy();
+                    cluster_eta[cluster_number] = cluster->eta();
+                    cluster_phi[cluster_number] = cluster->phi();
+                    cluster_z[cluster_number] = cluster->z();
+                    cluster_size[cluster_number] = cluster->size();
+                    
+                    if(TMath::Abs(cluster->z())>367.699 && tool->getLayer(cluster->seed()) <28 )
+                    {
+                        cluster_Layer[cluster_number] = tool->getLayer(cluster->seed())+28;
+                    }
+                    else{
+                        cluster_Layer[cluster_number] = tool->getLayer(cluster->seed());
+                    }
+                    cluster_number++;
+            }
+            tree->Fill();
         }
-        tree->Fill();
-    }
 //    double eta = TMath::Abs(jets->at(Leading_Jet).eta()) ;
-
+    }
 #ifdef THIS_IS_AN_EVENTSETUP_EXAMPLE
   // if the SetupData is always needed
   auto setup = iSetup.getData(setupToken_);
@@ -232,9 +242,12 @@ void Ntuple_Analyzer::beginJob() {
   tree->Branch("jet_px",&jet_px,"jet_px/D");
   tree->Branch("jet_py",&jet_py,"jet_py/D");
   tree->Branch("jet_pz",&jet_pz,"jet_pz/D");
+  tree->Branch("jet_charge",&jet_charge,"jet_charge/F");
   tree->Branch("jet_energy",&jet_energy,"jet_energy/D");
   tree->Branch("jet_partonFlavour",&jet_partonFlavour,"jet_partonFlavour/I");
   tree->Branch("jet_hadronFlavour",&jet_hadronFlavour,"jet_hadronFlavour/I");
+  tree->Branch("jet_neutralMultiplicity",&jet_neutralMultiplicity,"jet_neutralMultiplicity/I");
+  tree->Branch("jet_chargedMultiplicity",&jet_chargedMultiplicity,"jet_chargedMultiplicity/I");
   
   tree->Branch("constituent_number",&constituent_number,"constituent_number/I");
   tree->Branch("constituent_eta",constituent_eta,"constituent_eta[constituent_number]/D");
@@ -244,7 +257,7 @@ void Ntuple_Analyzer::beginJob() {
   tree->Branch("constituent_py",constituent_py,"constituent_py[constituent_number]/D");
   tree->Branch("constituent_pz",constituent_pz,"constituent_pz[constituent_number]/D");
   tree->Branch("constituent_energy",constituent_energy,"constituent_energy[constituent_number]/D");
-  tree->Branch("constituent_charge",constituent_charge,"constituent_charge[constituent_number]/D");
+  tree->Branch("constituent_charge",constituent_charge,"constituent_charge[constituent_number]/I");
    
   tree->Branch("cluster_number",&cluster_number,"cluster_number/I");
   tree->Branch("cluster_eta",cluster_eta,"cluster_eta[cluster_number]/D");
