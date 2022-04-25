@@ -5,3 +5,7 @@ xrdfs se01.grid.nchc.org.tw ls /cms/store/user/zhenggan/path/to/data | cat > XXX
 ```
 cmsRun ./python/edanalyzer_cfi.py  part=0
 ```
+
+
+# Segmentation violation in Ntuple part.
+Be careful, the array size might be too small.
